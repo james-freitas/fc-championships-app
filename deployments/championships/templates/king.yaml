@@ -3,6 +3,7 @@ apiVersion: configuration.konghq.com/v1
 kind: KongIngress
 metadata:
   name: championships-do-not-preserve-host
+  namespace: bets
 route:
   preserve_host: false
 upstream:
