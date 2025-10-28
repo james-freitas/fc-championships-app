@@ -3,6 +3,10 @@ kind: Service
 metadata:
   name: {{ include "championships.fullname" . }}
   annotations:
+    konghq.com/connect-timeout: "2000"
+    konghq.com/read-timeout: "2000"
+    konghq.com/write-timeout: "2000"
+    konghq.com/host-header: "{{ include "championships.fullname" . }}.bets.svc"
     konghq.com/plugins: prometheus-championships,championships-logs
     ingress.kubernetes.io/service-upstream: "true"
   labels:
